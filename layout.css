@@ -1,0 +1,65 @@
+body {
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-right: 15px;
+	padding-bottom: 0;
+}
+#screen {
+	height: 81%;
+	width: 95%;
+	position: absolute;
+	border-radius: 5px;
+	border: 15px solid black;
+	overflow: scroll;
+}
+#base {
+	height: 12%;
+	width: 10%;
+	background-color: black;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 45%;
+}
+.page {
+	height: 100%;
+	width: 100%;
+	background-color: #437F97;
+
+}
+#about-page {
+	background-color: #36802D ;
+}
+#details-page {
+	background-color: #000;
+}
+#app-page {
+	background-color: #D41E45;
+}
+#sponsors-page {
+
+}
+h3 { 
+	color: #ffffff; 
+	font-family: 'Raleway',sans-serif; 
+	font-size: 45px; 
+	font-weight: 800; 
+	line-height: 62px; 
+	margin: 0 0 24px; 
+	text-align: center; 
+	text-transform: uppercase; 
+	border-top: dashed white 5px;
+	border-bottom: dashed white 5px;
+}
+#console {
+	position: absolute;
+	bottom: 0;
+	width: 30%;
+	right: 10%;
+}
+#controller {
+	position: absolute;
+	bottom: -7px;
+	width: 20%;
+	left: 10%;
+}
