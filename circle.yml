@@ -10,4 +10,4 @@ deployment:
   production:
     branch: master
     commands:
-      - turbolift -u $RAXUSER -a $RAXAPIKEY --os-rax-auth $RAXREGION upload -s $HOME/$CIRCLE_PROJECT_REPONAME/app -c $CONTAINER
+      - turbolift -u $RAXUSER -a $RAXAPIKEY --os-rax-auth $RAXREGION upload -s $HOME/$CIRCLE_PROJECT_REPONAME/app -c $CONTAINER;
