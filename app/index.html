@@ -1,33 +1,171 @@
-<!DOCTYPE>
+<!DOCTYPE HTML>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="layout.css"">
+		<title>Game Jam</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body>
-		<audio class="audio" controls preload="none"> 
-		   <source src="audio/audio.mp3" type="audio/mpeg">
-		</audio>
-		<div id="screen">
-			<div class="page" id="menu-page">
-				<img src="imgs/mute.png" id="mute" class="sound">
-				<img src="imgs/unmute.png" id="unmute" class="sound" hidden="true">
-				<img src="imgs/pacman.gif" id="pacman" class="sprite walk">
-				<img src="imgs/inky.gif" id="inky" class="sprite walk">
-				<img src="imgs/pinky.gif" id="pinky" class="sprite walk">
-				<img src="imgs/blinky.gif" id="blinky" class="sprite walk">
-				<img src="imgs/clyde.gif" id="clyde" class="sprite walk">
-				<!-- <a class="typeform-share button" href="https://gamedays.typeform.com/to/EhAo6K" data-mode="2" target="_blank">Sign Up</a> -->
+		<img src="images/pacman.gif" id="pacman" class="sprite walk">
+		<img src="images/inky.gif" id="inky" class="sprite walk">
+		<img src="images/pinky.gif" id="pinky" class="sprite walk">
+		<img src="images/blinky.gif" id="blinky" class="sprite walk">
+		<img src="images/clyde.gif" id="clyde" class="sprite walk">
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="#what">WHAT</a></li>
+					<li><a href="#participate">PARTICIPATE</a></li>
+					<li><a href="#sponsors">SPONSORS</a></li>
+					<li><a href="#contact">WHERE</a></li>
+					<li><a href="#contact">CONTACT</a></li>
+				</ul>
+			</nav>
+
+		<!-- WHAT -->
+			<div class="wrapper style1 first">
+				<article class="container" id="what">
+					<div class="row">
+						<div class="4u 12u(mobile)">
+							<img src="images/gameboy.png" alt="" style="width: 70%" />
+						</div>
+						<div class="8u 12u(mobile)">
+							<header>
+								<img src="images/logo.png">
+							</header>
+							<p>
+								This fall, the GameDays initiative of Tech@NYU is hosting a game jam! A game jam is essentially a hackathon, but for game development. GameDays invites 100 students from all over New York City and beyond to explore digital and physical game design, meet new people, express themselves creatively, and bring an idea to fruition! Game Jam will be a day long, lunch and dinner will be served! 
+							</p>
+						</div>
+					</div>
+				</article>
 			</div>
-		</div>
-		<div id="base">
-		</div>
-		<img src="imgs/ps4-game-console.png" id="console"/>
-		<img src="imgs/joystick-game-control.png" id="controller" class="hvr-buzz">
-		<!-- Jquery -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-		<script src="main.js" type="text/javascript">
-			
-		</script>
-		<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()</script>
+
+		<!-- WHERE -->
+			<div class="wrapper style2">
+				<article id="participate">
+					<header>
+						<h2>Character Select</h2>
+					</header>
+					<div class="container">
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								<section class="box style1">
+									<span class="icon featured fa-code-fork"></span>
+									<h3>PARTICIPANT</h3>
+									<p>
+										<strong>STATS</strong><br>
+										Intelligence: 15<br>
+										Charisma: 10<br>
+										Strength: 10<br>
+										Dexterity: 20<br>
+										Concentration: 20<br>
+										<a class="button" href="https://gamedays.typeform.com/to/GOFqPl" data-mode="2" target="_blank">Make</a>
+<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()</script>
+									</p>
+
+
+								</section>
+							</div>
+							<div class="4u 12u(mobile)">
+								<section class="box style1">
+									<span class="icon featured fa-credit-card"></span>
+									<h3>SPONSOR</h3>
+									<p>
+										<strong>STATS</strong><br>
+										Intelligence: 20<br>
+										Charisma: 20<br>
+										Strength: 20<br>
+										Dexterity: 20<br>
+										Concentration: 20<br>
+										<a class="button" href="https://gamedays.typeform.com/to/j4vIBp" data-mode="2" target="_blank">Sponsor</a>
+										<script>
+											(function(){
+												var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()
+										</script>
+									</p>
+									
+								</section>
+							</div>
+							<div class="4u 12u(mobile)">
+								<section class="box style1">
+									<span class="icon featured fa-pencil-square-o"></span>
+									<h3>MENTORS</h3>
+									<p>
+										<strong>STATS</strong><br>
+										Intelligence: 20<br>
+										Charisma: 20<br>
+										Strength: 10<br>
+										Dexterity: 20<br>
+										Concentration: 15<br>
+										<a class="button" href="https://gamedays.typeform.com/to/EhAo6K" data-mode="2" target="_blank">Help</a>
+										<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()</script>
+
+									</p>
+								</section>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+
+		<!-- Portfolio -->
+			<div class="wrapper style3">
+				<article id="sponsors">
+					<header>
+						<h2>Our Backers!</h2>
+					</header>
+					<div class="container">
+						<div class="row">
+							<div class="4u 12u(mobile)">
+							<a href="techatnyu.org" class="image featured"><img src="images/techatnyu.png" alt="" /></a>
+								
+							</div>
+							<div class="4u 12u(mobile)">
+							<a href="https://www.microsoft.com/en-us/" class="image featured"><img src="images/microsoft.png" alt="" /></a>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+
+		<!-- Contact -->
+			<div class="wrapper style4">
+				<article id="contact" class="container 100%">
+					<div>
+						<div class="row">
+							<div class="8u">
+								<header>
+									<h2>Location and Time</h2>
+									<h6>October 7th, from 10am to 7pm</h6>
+									<h6>Microsoft Offices at </h6>
+								</header>
+								<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:440px;width:700px;'>
+								<div id='gmap_canvas' style='height:440px;width:700px;'></div>
+								<style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:15,center:new google.maps.LatLng(40.7569855,-73.98967089999996),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.7569855,-73.98967089999996)});infowindow = new google.maps.InfoWindow({content:'<strong>Microsoft Offices</strong><br>11 Times Square, 7th Floor, New York<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+							</div>
+							<div class="4u">
+								<header>
+									<h2>Contact Us</h2>
+
+								</header>
+								<h6>Email</h6>
+								gamedaystnyu@gmail.com
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/skel-viewport.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
 	</body>
 </html>
