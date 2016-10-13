@@ -18,7 +18,6 @@ var width = parseInt($("body").css("width").replace("px", ""));
 var spriteWidth = parseInt($(".sprite").css("width").replace("px", ""));
 
 (function($) {
-
 	skel
 		.breakpoints({
 			desktop: '(min-width: 737px)',
@@ -73,7 +72,31 @@ var spriteWidth = parseInt($(".sprite").css("width").replace("px", ""));
 			});
 
 	});
-	window.setInterval(function() {
+	window.addEventListener("keydown", function(event){
+		var upKey = 87;
+		var downKey = 83;
+		var leftKey = 65;
+		var rightKey = 68;
+		var posX = parseInt($("#pacman").css("left").replace("px", ""));
+		var posY = parseInt($("#pacman").css("bottom").replace("px", ""));
+
+		switch(event.keyCode){
+			case upKey:
+				$("#pacman").css("bottom", decrPixel($("#pacman").css("bottom")))
+				break;
+			case downKey:
+				$("#pacman").css("bottom", incrPixel($("#pacman").css("bottom")))
+				break;
+			case leftKey:
+				$("#pacman").css("left", incrPixel($("#pacman").css("left")))
+				break;
+			case rightKey:
+				$("#pacman").css("left", decrPixel($("#pacman").css("left")))
+				break;
+		}
+		}
+	);
+	/*window.setInterval(function() {
 		var posX = parseInt($("#pacman").css("left").replace("px", ""));
 		if (posX < 0 || posX > width - spriteWidth) {
 			pacmanReverse = !pacmanReverse;
@@ -88,7 +111,7 @@ var spriteWidth = parseInt($(".sprite").css("width").replace("px", ""));
 			$("#pacman").css("filter", "");
 			$("#pacman").css("left", incrPixel($("#pacman").css("left")))
 		}
-	}, 100);
+	}, 100);*/
 	window.setInterval(function() {
 		var posX = parseInt($("#inky").css("left").replace("px", ""));
 		if (posX < 0 || posX > width - spriteWidth) {
