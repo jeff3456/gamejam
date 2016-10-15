@@ -15,7 +15,16 @@ var COLORS_RGB = {
 	ORANGE: [229,98,59],
 	RED: [201,41,53],
 	GREEN: [91,212,91],
-	BLUE: [6,162,178]
+	BLUE: [6,162,178],
+	WHITE: [255, 255, 255],
+	BLACK: [0,0,0],
+	PINK:[255,182,193],
+	PURPLE:[153,50,204]
+};
+
+function getColor(colorString){
+	var cVals = COLORS_RGB[colorString]
+	return color(cVals[0],cVals[1],cVals[2]);
 }
 
 function hitWall(object){
@@ -40,7 +49,7 @@ function Ball(x, y, size, gConstant, orbitSpeed, maxSpeed, radiusZero, color){
 	this.orbitSpeed = orbitSpeed;
 	this.maxSpeed = maxSpeed;
 	this.radiusZero = radiusZero;
-	this.color = COLORS_RGB[color];
+	this.color = color;
 }
 
 Ball.prototype.move = function(destX, destY){
@@ -97,13 +106,13 @@ function BoxGuy(x, y, accel, size, minSpeed, color){
 	this.accel = accel;
 	this.size = size;
 	this.minSpeed = minSpeed;
-	this.color = COLORS_RGB[color];
+	this.color = color;
 }
 
 BoxGuy.prototype.move = function(destX, destY){
 	var d = distance(this.x, this.y, destX, destY);
 	var speed = 0;
-	if(d > 2) speed = Math.max(this.accel * Math.pow(d, 2), this.minSpeed);
+	if(d > this.minSpeed) speed = Math.max(this.accel * Math.pow(d, 2), this.minSpeed);
 	var scale = 0;
 	if(d !== 0) scale = speed/ d;
 	var dX = (destX - this.x) * scale;
@@ -120,19 +129,55 @@ function distance(x1, y1, x2, y2){
 
 function drawBoxGuy(bxg){
 	// draw square around boxGuy
-	var offset = bxg.size/2;
-	var c = color(bxg.color[0], bxg.color[1], bxg.color[2]);
+	var offsetHalf = bxg.size/2;
+	var offsetQuart = bxg.size/4;
+	var offsetSix = bxg.size/6;
+	var offsetEight = bxg.size/8;
+	var c = getColor(bxg.color);
 	fill(c);  // Use color variable 'c' as fill color
 
-	rect(bxg.x-offset, bxg.y-offset, bxg.size, bxg.size, 10);
+	rect(bxg.x-offsetHalf, bxg.y-offsetHalf, bxg.size, bxg.size, 10);
 	// Draw eyes and mouth
-	// ellipse();
+	var white = getColor("WHITE");
+	var black = getColor("BLACK");
+	var pink = getColor("PINK");
+	// left eye;
+	fill(black);
+	ellipse(bxg.x-offsetQuart,
+			  	bxg.y-offsetQuart,
+					offsetSix);
+	fill(white);
+	ellipse(bxg.x-offsetQuart,
+					bxg.y-offsetQuart-3,
+					5)
+
+	// right eye;
+	fill(black);
+	ellipse(bxg.x+offsetQuart,
+					bxg.y-offsetQuart,
+					offsetSix);
+	fill(white);
+	ellipse(bxg.x+offsetQuart,
+					bxg.y-offsetQuart-3,
+					5);
+
+	// mouth
+	fill(pink);
+	triangle(bxg.x-offsetEight, bxg.y,
+					 bxg.x+offsetEight, bxg.y,
+				 	 bxg.x, bxg.y+offsetSix);
 }
 function drawBall(ball){
-	var c = color(ball.color[0], ball.color[1], ball.color[2]);
+	var c = getColor(ball.color);
 	fill(c);  // Use color variable 'c' as fill color
 
 	ellipse(ball.x, ball.y, ball.size);
+}
+
+function backgroundFrame(){
+	var c = getColor("BLACK");
+	fill(c);
+	rect(0,0, mCanvasWidth, mCanvasHeight);
 }
 
 
@@ -144,19 +189,18 @@ function setup() {
 	noStroke();  // Don't draw a stroke around shapes
 
 	// BoxGuy(x, y, accel, size, minSpeed, color)
-	mBoxGuy = new BoxGuy(mCanvasWidth/2, mCanvasHeight/2, 0.0004, 80, 2, "RED");
+	mBoxGuy = new BoxGuy(mCanvasWidth/2, mCanvasHeight/2, 0.0008, 80, 2, "PURPLE");
 
 	// init balls
 	mBalls = [];
-	// Ball(x, y, size, gConstant, orbitSpeed, maxSpeed, radiusZero)
+	// Ball(x, y, size, gConstant, orbitSpeed, maxSpeed, radiusZero, color)
 	mBalls.push(new Ball(mBoxGuy.x-50, mBoxGuy.y+50, 20, 7000, 5, 15, 60, "GREEN"));
-	mBalls.push(new Ball(mBoxGuy.x+50, mBoxGuy.y-50, 25, 4000, 5, 12, 60, "YELLOW"));
+	mBalls.push(new Ball(mBoxGuy.x+50, mBoxGuy.y-50, 25, 4000, 5, 12, 60, "RED"));
 	mBalls.push(new Ball(mBoxGuy.x, mBoxGuy.y+80, 35, 3000, 5, 6, 50, "BLUE"));
 }
 
-
 function draw() {
-	clear();
+	backgroundFrame();
 	mBoxGuy.move(mouseX, mouseY);
 	for(var i = 0; i < mBalls.length; i++){
 		mBalls[i].move(mBoxGuy.x, mBoxGuy.y);
@@ -165,6 +209,9 @@ function draw() {
 	drawBoxGuy(mBoxGuy);
 }
 
+function mousePressed() {
+	return;
+}
 
 
 
@@ -175,6 +222,7 @@ function draw() {
 
 
 
+/*
 
 function incrPixel(str) {
 	return (parseInt(str.replace("px", "")) - 10) + "px";
@@ -268,7 +316,14 @@ var spriteWidth = parseInt($(".sprite").css("width").replace("px", ""));
 				break;
 		}
 	});
-	/*window.setInterval(function() {
+
+	*/
+
+
+
+
+	/*
+	window.setInterval(function() {
 		var posX = parseInt($("#pacman").css("left").replace("px", ""));
 		if (posX < 0 || posX > width - spriteWidth) {
 			pacmanReverse = !pacmanReverse;
@@ -283,7 +338,7 @@ var spriteWidth = parseInt($(".sprite").css("width").replace("px", ""));
 			$("#pacman").css("filter", "");
 			$("#pacman").css("left", incrPixel($("#pacman").css("left")))
 		}
-	}, 100);*/
+	}, 100);
 	window.setInterval(function() {
 		var posX = parseInt($("#inky").css("left").replace("px", ""));
 		if (posX < 0 || posX > width - spriteWidth) {
@@ -349,3 +404,4 @@ var spriteWidth = parseInt($(".sprite").css("width").replace("px", ""));
 		}
 	}, 100);
 })(jQuery);
+*/
